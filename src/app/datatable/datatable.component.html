@@ -1,1 +1,5 @@
-<p>datatable works!</p>
+<ng-container *ngIf="authService.isLoggedIn_m()">
+<div  class="cotainer">
+<app-machine-list></app-machine-list>
+</div>
+</ng-container>

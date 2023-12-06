@@ -9,7 +9,13 @@ import { DatatableComponent } from './datatable/datatable.component';
 import { UploadComponent } from './upload/upload.component';
 import { SignupComponent } from './signup/signup.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule } from '@angular/forms'; // Assurez-vous que FormsModule est importé
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MachineListComponent } from './machine-list/machine-list.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { UpdateMachineDialogComponent } from './update-machine-dialog/update-machine-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Assurez-vous que cette ligne est présente
+
 
 
 @NgModule({
@@ -21,11 +27,18 @@ import { FormsModule } from '@angular/forms'; // Assurez-vous que FormsModule es
     DatatableComponent,
     UploadComponent,
     SignupComponent,
-    NavbarComponent
+    NavbarComponent,
+    MachineListComponent,
+    UpdateMachineDialogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+      HttpClientModule,
+      FormsModule ,
+      MatDialogModule,
+      BrowserAnimationsModule
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

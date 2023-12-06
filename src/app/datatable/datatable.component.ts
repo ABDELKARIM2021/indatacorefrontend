@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-datatable',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./datatable.component.css']
 })
 export class DatatableComponent {
+
+  constructor(public authService: AuthService) {}
+
 
 }

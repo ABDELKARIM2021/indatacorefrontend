@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'sidebar',component:SidebarComponent},
   { path: 'datatable', component: DatatableComponent },
   { path: 'upload', component: UploadComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  
   {path:'navbar',component:NavbarComponent}
 ];
 

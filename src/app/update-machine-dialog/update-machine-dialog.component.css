@@ -1,0 +1,45 @@
+/* update-machine-dialog.component.css */
+h2 {
+    color: #1976D2; /* Change the color to your preference */
+    margin-bottom: 20px;
+  }
+  
+  mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: #555; /* Change the color to your preference */
+  }
+  
+  input,
+  textarea {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Change the color to your preference */
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  /* Optional: Add some styling for the "Annuler" button */
+  button[mat-dialog-close] {
+    color: #757575; /* Change the color to your preference */
+  }
+  
+  button[mat-dialog-close]:hover {
+    text-decoration: underline;
+  }
+  

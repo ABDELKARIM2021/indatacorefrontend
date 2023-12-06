@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -8,23 +9,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-
-
-  constructor(private authService: AuthService,private router: Router) {}
-
-  
   email: string = '';
   password: string = '';
+  errorMessage: string='';
+
+  
+  constructor(private authService: AuthService,private router: Router,private http:HttpClient) {}
+
 
 
   login() {
-    // Ajoutez ici la logique pour appeler votre service backend pour la connexion
-    // par exemple, utilisez un service d'authentification pour envoyer les données au backend
-    // Une fois la connexion réussie, vous pouvez rediriger l'utilisateur vers une page appropriée
-    // Par exemple, nous redirigeons l'utilisateur vers la page d'accueil '/'.
-    this.authService.login();
-    this.router.navigate(['/']);
-  }
+    
+    const credentials = {
+    email: this.email,
+    password: this.password
+  };
+  this.http.post<any>('http://localhost:8080/singin', credentials)
+  .subscribe(
+    response => {
+      if (response.id) {
+        alert('Login avec succès');
+        this.authService.login();
+        this.router.navigate(['/']);
+      } else {
+        alert('Login ou mot de passe incorrect');
+        this.router.navigate(['/login']);
+      }
+    },
+    error => {
+      console.error('Erreur lors de l\'authentification:', error);
+      this.errorMessage = 'Une erreur s\'est produite lors de l\'authentification.';
+    }
+  );
 
+}
 }

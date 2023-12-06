@@ -1,0 +1,17 @@
+<!-- update-machine-dialog.component.html -->
+<h2 mat-dialog-title>Mettre à jour la machine</h2>
+<div mat-dialog-content>
+  <p>ID: {{ data.machine.id }}</p>
+  <label for="nom">Nom:</label>
+  <input id="machine.nom" [(ngModel)]="data.updatedMachine.nom" name="nom" required>
+  <br>
+  <label for="type">Type:</label>
+  <input id="type" [(ngModel)]="data.updatedMachine.type" name="type" required>
+  <br>
+  <label for="description">Description:</label>
+  <textarea id="description" [(ngModel)]="data.updatedMachine.description" name="description" required></textarea>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Enregistrer</button>
+</div>

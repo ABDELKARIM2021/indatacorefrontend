@@ -1,0 +1,33 @@
+<!-- machine-list.component.html -->
+<div class="container">
+<div *ngIf="machines.length > 0; else noMachines">
+    <button (click)="addRandomMachine()">Ajouter Machine Aléatoire</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let machine of machines">
+          <td>{{ machine.id }}</td>
+          <td>{{ machine.nom }}</td>
+          <td>{{ machine.type }}</td>
+          <td>{{ machine.description }}</td>
+          <td>
+            <button (click)="deleteMachine(machine.id)">Supprimer</button>
+            <button (click)="openUpdateDialog(machine)">Mettre à jour</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  <ng-template #noMachines>
+    <p>Aucune machine disponible.</p>
+  </ng-template>
+  

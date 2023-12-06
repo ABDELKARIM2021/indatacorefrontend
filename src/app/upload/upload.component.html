@@ -1,1 +1,16 @@
-<p>upload works!</p>
+<ng-container *ngIf="authService.isLoggedIn_m()">
+
+<div class="container">
+<!-- app.component.html -->
+<form (ngSubmit)="onSubmit()" #fileForm="ngForm">
+    <div>
+      <label for="fileInput">Choisir un fichier:</label>
+      <input type="file" id="fileInput" name="fileInput" (change)="onFileSelected($event)" required>
+    </div>
+  
+    <button type="submit" [disabled]="!fileForm.valid">Envoyer</button>
+  </form>
+  
+</div>
+
+</ng-container>
