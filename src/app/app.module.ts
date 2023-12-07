@@ -14,7 +14,11 @@ import { FormsModule } from '@angular/forms';
 import { MachineListComponent } from './machine-list/machine-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UpdateMachineDialogComponent } from './update-machine-dialog/update-machine-dialog.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Assurez-vous que cette ligne est présente
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { StackedBarChartComponent } from './stacked-bar-chart/stacked-bar-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { RadarChartComponent } from './radar-chart/radar-chart.component'; // Assurez-vous que cette ligne est présente
 
 
 
@@ -29,7 +33,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     SignupComponent,
     NavbarComponent,
     MachineListComponent,
-    UpdateMachineDialogComponent
+    UpdateMachineDialogComponent,
+    BarChartComponent,
+    StackedBarChartComponent,
+    PieChartComponent,
+    RadarChartComponent
   ],
   imports: [
     BrowserModule,

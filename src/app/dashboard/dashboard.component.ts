@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Chart, ChartConfiguration, ChartDataset } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
+  
   constructor(public authService: AuthService) {}
 
+ 
 }

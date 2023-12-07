@@ -1,0 +1,17 @@
+/* Styles pour le Pie Chart */
+#pieChartContainer {
+    width: 100%;
+    max-width: 400px; /* Ajustez selon vos besoins */
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles génériques pour les graphiques */
+  .chart-canvas {
+    width: 100%;
+    height: auto;
+  }
+  

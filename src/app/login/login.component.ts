@@ -27,7 +27,7 @@ export class LoginComponent {
   this.http.post<any>('http://localhost:8080/singin', credentials)
   .subscribe(
     response => {
-      if (response.id) {
+      if (response) {
         alert('Login avec succès');
         this.authService.login();
         this.router.navigate(['/']);
@@ -37,6 +37,8 @@ export class LoginComponent {
       }
     },
     error => {
+      alert('Login ou mot de passe incorrect');
+        this.router.navigate(['/login']);
       console.error('Erreur lors de l\'authentification:', error);
       this.errorMessage = 'Une erreur s\'est produite lors de l\'authentification.';
     }
